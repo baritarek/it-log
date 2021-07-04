@@ -1,9 +1,7 @@
 import React , {useState} from 'react'
 import M from 'materialize-css/dist/js/materialize.min.js'
-import {connect} from 'react-redux'
-import {addLog} from '../../actions/logActions'
 
-const AddLogModal = ({addLog}) => {
+const EditLogModal = () => {
     const [message, setMessage] = useState('');
     const [attention, setAttention] = useState(false);
     const [developer, setDeveloper] = useState('');
@@ -22,7 +20,7 @@ const AddLogModal = ({addLog}) => {
         }
     }
     return (
-        <div id='add-log-modal' className="modal" style={modalStyle}>
+        <div id='edit-log-modal' className="modal" style={modalStyle}>
             <div className="modal-content">
                 <h4>Enter Debug Log</h4>
                 <div className="row">
@@ -81,14 +79,9 @@ const AddLogModal = ({addLog}) => {
     )
 }
 
-AddLogModal.PropTypes = {
-    addLog: PropTypes.func.isRequired,
-}
-
 const modalStyle ={
     widht: '75%',
     height: '75%'
 }
 
-export default connect(null , {addLog})(AddLogModal);
- 
+export default EditLogModal

@@ -2,8 +2,8 @@ import React from 'react'
 
 const Loader = () => {
     return (
-        <div className="progress blue lighten-4">
-            <div className="indeterminate blue"></div>
+        <div className="progress green lighten-4">
+            <div className="indeterminate green"></div>
         </div>
     )
 }
