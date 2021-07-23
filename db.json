@@ -1,25 +1,7 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "Debug log in of Admin ",
-      "attention": true,
-      "date": "01-08-2021",
-      "webDev": "John Smith"
-    },
-    {
-      "id": 2,
-      "message": "Page collapse... ",
-      "attention": true,
-      "date": "01-07-2021",
-      "webDev": "Albert Don"
-    },
-    {
-      "id": 3,
-      "message": "Create checkout page",
-      "attention": false,
-      "date": "01-09-2021",
-      "webDev": "Bari White"
+      "id": 1
     }
   ],
   "developers": [

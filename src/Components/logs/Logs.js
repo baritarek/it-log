@@ -1,4 +1,4 @@
-import React , {useState , useEffect} from 'react'
+import React , { useEffect} from 'react'
 import {connect} from 'react-redux'
 import LogItem from '../logs/LogItem'
 import Loader from '../layout/Loader'
@@ -28,6 +28,7 @@ import {getLogs} from '../../actions/logActions'
 
 Logs.propTypes ={
     log: PropTypes.object.isRequired,
+    getLogs: PropTypes.func.isRequired, 
 }
 
 const mapStateToProps = state =>({

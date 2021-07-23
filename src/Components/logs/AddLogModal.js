@@ -1,9 +1,11 @@
 import React , {useState} from 'react'
 import M from 'materialize-css/dist/js/materialize.min.js'
+import TechSelectOptions from '../Techs/TechSelectOptions'
 import {connect} from 'react-redux'
 import {addLog} from '../../actions/logActions'
+import PropTypes from 'prop-types'
 
-const AddLogModal = ({addLog}) => {
+const  AddLogModal = ({addLog}) => {
     const [message, setMessage] = useState('');
     const [attention, setAttention] = useState(false);
     const [developer, setDeveloper] = useState('');
@@ -13,8 +15,15 @@ const AddLogModal = ({addLog}) => {
             M.toast({html: 'Please enter a message and developer'})
         }
        else { 
-           console.log(message,developer,attention)
-
+         //Create new log
+         const newLog = {
+             message,
+             attention,
+             developer,
+             date: new Date()
+         }
+         addLog(newLog);
+         M.toast({html:`Log added by ${developer}`})
            //Clear fields 
            setMessage('');
            setDeveloper('');
@@ -47,9 +56,7 @@ const AddLogModal = ({addLog}) => {
                             <option value="" disabled>
                                 Select Web Developer
                             </option>
-                            <option value="John Smith">John Smith</option>
-                            <option value="Albert Don">Albert Don</option>
-                            <option value="Bari White">Bari White</option>
+                            <TechSelectOptions/>
                         </select>
                     </div>
                 </div>
@@ -81,7 +88,7 @@ const AddLogModal = ({addLog}) => {
     )
 }
 
-AddLogModal.PropTypes = {
+AddLogModal.propTypes = {
     addLog: PropTypes.func.isRequired,
 }
 
